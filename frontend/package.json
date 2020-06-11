@@ -1,7 +1,28 @@
 {
   "name": "corpushub-fe",
   "version": "0.1.0",
+  "description": "Frontend implementation of CorpusHub project",
+  "keywords": [
+    "corpushub",
+    "corpus",
+    "markdown",
+    "search",
+    "engine",
+    "react",
+    "nextjs"
+  ],
+  "homepage": "https://github.com/yasarb/corpushub-web/tree/master/frontend",
   "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Yasar Budulgan",
+    "email": "yb.budulgan@gmail.com",
+    "url": "https://yasarb.dev"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/yasarb/corpushub-web"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
