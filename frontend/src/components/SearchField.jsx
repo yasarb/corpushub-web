@@ -19,6 +19,7 @@ export default function SearchField() {
           placeholder="Search"
           borderRadius="5rem"
           autoFocus
+          borderColor="gray.400"
           focusBorderColor="#1890FF"
         />
       </InputGroup>
