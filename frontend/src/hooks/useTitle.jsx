@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 
-function useTitle(title, retainOnUnmount = false) {
+export default function useTitle(title, retainOnUnmount = false) {
   const previousTitle = useRef(document.title);
 
   useEffect(() => {
@@ -13,5 +13,3 @@ function useTitle(title, retainOnUnmount = false) {
     }
   }, []);
 }
-
-module.exports = useTitle;
