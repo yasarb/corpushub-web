@@ -2,8 +2,21 @@ import React from 'react';
 import {
   Box, Icon, Input, InputGroup, InputLeftElement,
 } from '@chakra-ui/core';
+import { navigate } from '@reach/router';
 
 export default function SearchField() {
+  let timeout;
+
+  const handleChange = (event) => {
+    const { value } = event.target;
+
+    if (timeout) clearTimeout(timeout);
+
+    timeout = setTimeout(() => {
+      navigate(`/search?q=${value}`);
+    }, 1000);
+  };
+
   return (
     <Box
       maxWidth="650px"
@@ -21,6 +34,7 @@ export default function SearchField() {
           autoFocus
           borderColor="gray.400"
           focusBorderColor="#1890FF"
+          onChange={handleChange}
         />
       </InputGroup>
     </Box>
