@@ -4,15 +4,18 @@ import { ThemeProvider, CSSReset } from '@chakra-ui/core';
 
 import Home from '../pages/Home';
 import Results from '../pages/Results';
+import { QueryProvider } from '../store';
 
 function App() {
   return (
     <ThemeProvider>
       <CSSReset />
-      <Router>
-        <Home path="/" />
-        <Results path="/search" />
-      </Router>
+      <QueryProvider>
+        <Router>
+          <Home path="/" />
+          <Results path="/search" />
+        </Router>
+      </QueryProvider>
     </ThemeProvider>
   );
 }

@@ -14,7 +14,6 @@ export default function Resuls() {
   return (
     <>
       <SearchHeader />
-      {/* <h1>{searchParams.q || 'Results'}</h1> */}
     </>
   );
 }
