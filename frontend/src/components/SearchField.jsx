@@ -21,7 +21,6 @@ export default function SearchField() {
     <Box
       maxWidth="650px"
       width="100%"
-      mt="30px"
     >
       <InputGroup mx="25px">
         <InputLeftElement>

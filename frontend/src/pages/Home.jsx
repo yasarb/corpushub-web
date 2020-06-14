@@ -14,10 +14,16 @@ export default function Home() {
         width="100%"
         pt="250px"
         align="center"
-        spacing={8}
       >
         <Brand />
-        <SearchField />
+
+        <Flex
+          mt="30px"
+          w="100%"
+          justify="center"
+        >
+          <SearchField />
+        </Flex>
       </Stack>
     </Flex>
   );
