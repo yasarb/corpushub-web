@@ -1,21 +1,36 @@
-import React from 'react';
-import {
-  Box, Icon, Input, InputGroup, InputLeftElement,
-} from '@chakra-ui/core';
+import React, { useState, useEffect, useRef } from 'react';
+import { connect, useSelector } from 'react-redux';
 import { navigate } from '@reach/router';
+import {
+  Box,
+  Icon,
+  Input,
+  InputGroup,
+  InputLeftElement,
+} from '@chakra-ui/core';
+import { setQuery } from '../search.slice';
 
-export default function SearchField() {
-  let timeout;
+const mapDispatch = { setQuery };
 
-  const handleChange = (event) => {
-    const { value } = event.target;
+const SearchField = (props) => {
+  let timer = null;
+  const { query } = useSelector((state) => state.search);
+  const { setQuery } = props;
+  const [currentQuery, setCurrentQuery] = useState(query);
+  const queryRef = useRef(currentQuery);
+  queryRef.current = currentQuery;
 
-    if (timeout) clearTimeout(timeout);
+  function callback() {
+    setQuery(queryRef.current);
+    navigate(`/search?q=${queryRef.current}`);
+  }
 
-    timeout = setTimeout(() => {
-      navigate(`/search?q=${value}`);
-    }, 1000);
-  };
+  useEffect(() => {
+    if (!currentQuery) return () => {};
+
+    timer = setTimeout(callback, 300);
+    return () => clearTimeout(timer);
+  }, [currentQuery]);
 
   return (
     <Box
@@ -33,9 +48,15 @@ export default function SearchField() {
           autoFocus
           borderColor="gray.400"
           focusBorderColor="#1890FF"
-          onChange={handleChange}
+          value={currentQuery}
+          onChange={(event) => setCurrentQuery(event.target.value)}
         />
       </InputGroup>
     </Box>
   );
-}
+};
+
+export default connect(
+  null,
+  mapDispatch,
+)(SearchField);
