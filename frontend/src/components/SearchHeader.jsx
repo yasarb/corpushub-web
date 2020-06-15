@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import { Box, Flex } from '@chakra-ui/core';
 import Brand from './Brand';
 import SearchField from './SearchField';
@@ -19,8 +20,8 @@ export default function SearchHeader() {
         w="100%"
         maxW="1300px"
       >
-        <Box minW="100px" width="25%">
-          <Brand fontSize="2xl" />
+        <Box as="a" href="/" minW="100px" width="25%">
+          <Brand fontSize="3xl" />
         </Box>
         <Box w="100%">
           <SearchField />
