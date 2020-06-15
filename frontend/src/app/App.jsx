@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { Router } from '@reach/router';
 import { ThemeProvider, CSSReset } from '@chakra-ui/core';
 
+import './App.css';
 import store from './store';
 import Home from '../pages/Home';
 import Results from '../pages/Results';
