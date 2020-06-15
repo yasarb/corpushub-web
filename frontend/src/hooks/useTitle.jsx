@@ -11,5 +11,6 @@ export default function useTitle(title, retainOnUnmount = false) {
     if (!retainOnUnmount) {
       document.title = previousTitle.current;
     }
+    // eslint-disable-next-line
   }, []);
 }

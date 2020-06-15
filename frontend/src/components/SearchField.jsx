@@ -28,6 +28,7 @@ const SearchField = (props) => {
   useEffect(() => {
     if (!currentQuery) return () => {};
 
+    // eslint-disable-next-line
     timer = setTimeout(callback, 300);
     return () => clearTimeout(timer);
   }, [currentQuery]);
