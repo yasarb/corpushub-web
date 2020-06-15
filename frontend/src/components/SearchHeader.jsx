@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from '@reach/router';
 import { Box, Flex } from '@chakra-ui/core';
 import Brand from './Brand';
 import SearchField from './SearchField';
